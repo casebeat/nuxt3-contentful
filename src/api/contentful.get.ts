@@ -1,10 +1,10 @@
 import { defineEventHandler, getQuery, createError } from "h3";
-import { getPageBySlug } from "../functions/getPageBySlug";
-import { getPages } from "../functions/getPages";
+import { getEntryBySlug } from "../functions/getEntryBySlug";
+import { getEntries } from "../functions/getEntries";
 
 export default defineEventHandler(async (event) => {
     
-    const {slug, contentType, excludeSlug} = getQuery(event);
+    const {slug, contentType, excludeSlug, skip, limit} = getQuery(event);
 
     if(!contentType){
       throw createError({
@@ -28,15 +28,15 @@ export default defineEventHandler(async (event) => {
 
 
     if(slug && slug.toString() !== ''){
-      const content = await getPageBySlug(slug ? slug.toString() : "index", contentType?.toString());
-
+      // Get a single page by slug
+      const content = await getEntryBySlug(slug ? slug.toString() : "index", contentType?.toString());
       return content;   
     } else {
-      const content = await getPages({limit:3 ,contentType: contentType?.toString(), excludeSlugs: excludeSlugs});
+      // Get a list of pages
+      const skipNumber = skip ? parseInt(skip.toString()) : 0;
+      const limitNumber = limit ? parseInt(limit.toString()) : 20;
+      const content = await getEntries({skip: skipNumber, limit:limitNumber, contentType: contentType?.toString(), excludeSlugs: excludeSlugs});      
       return content;
     }
 
-
-    
-    
   })

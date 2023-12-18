@@ -10,8 +10,6 @@ export const useImageSrc = (image: contentful.EntryFieldTypes.AssetLink, params:
         }
         return `${url}?${query}`;
     }
-    //?w=200&h=200&fit=thumb&f=center
-   
-    //useImageSrc(image, {w: '200', h: '200', fit: 'thumb', f: 'center'})
+
     return url;
 }  

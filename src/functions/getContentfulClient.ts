@@ -3,12 +3,7 @@ import contentful from 'contentful'
 
 export function getContentfulClient() : ContentfulClientApi<undefined>{
     
-    //const options = useRuntimeConfig().public.contentful;
-    const options = {
-        space: '',
-        accessToken: ''
-    }
-
+    const options = useRuntimeConfig().public.contentful;
 
     const client = contentful.createClient({
         // This is the space ID. A space is like a project folder in Contentful terms
