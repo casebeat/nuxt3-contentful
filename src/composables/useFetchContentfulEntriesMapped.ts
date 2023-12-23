@@ -8,7 +8,7 @@ export async function useFetchContentfulEntriesMapped<T>(contentType: string, of
 
     const { data } = await useFetch(url);
 
-    let response = data?.value;        
+    const response = data?.value;        
 
     const items = response.items.map(item => mapEntryFieldsToPage<T>(item));          
     

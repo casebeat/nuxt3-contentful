@@ -1,4 +1,4 @@
-import { ContentfulClientApi, createClient } from "contentful";
+import { ContentfulClientApi } from "contentful";
 import contentful from 'contentful'
 
 export function getContentfulClient() : ContentfulClientApi<undefined>{

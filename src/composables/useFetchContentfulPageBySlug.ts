@@ -26,7 +26,7 @@ export async function  useFetchContentfulPageBySlug<T> (contentType: string){
 
     const { data } = await useFetch(url);
     
-    let entry =  data.value; 
+    const entry =  data.value; 
 
     if(!data){
         return null;

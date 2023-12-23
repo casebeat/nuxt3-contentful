@@ -1,4 +1,4 @@
-import contentful, { EntrySkeletonType } from 'contentful'
+import { EntrySkeletonType } from 'contentful'
 import { getContentfulClient } from "./getContentfulClient";
 
 /**
@@ -21,7 +21,7 @@ export async function getEntryBySlug(slug: string, contentType: string){
 
    const client = getContentfulClient();
    
-  let contentBySlug = await client.getEntries<contentful.EntrySkeletonType,string>({   
+  const contentBySlug = await client.getEntries<EntrySkeletonType,string>({   
     content_type: contentType, 
     "fields.slug" : slug     
   });

@@ -1,4 +1,4 @@
-import contentful, { EntrySkeletonType } from 'contentful'
+import contentful from 'contentful'
 import { getContentfulClient } from "./getContentfulClient";
 
 type getPagesQuery ={
@@ -12,7 +12,7 @@ export async function getEntries(query: getPagesQuery){
 
     const client = getContentfulClient();
 
-    let contentfulQuery = {  
+    const contentfulQuery = {  
         skip: query.skip,
         limit: query.limit,
         content_type: query.contentType ?? undefined        
@@ -22,8 +22,7 @@ export async function getEntries(query: getPagesQuery){
         contentfulQuery['fields.slug[nin]'] = query.excludeSlugs.join(',');
     }        
 
-    let entries = await client.getEntries<contentful.EntrySkeletonType,string>(contentfulQuery);
+    const entries = await client.getEntries<contentful.EntrySkeletonType,string>(contentfulQuery);
     
     return entries;
-
 }

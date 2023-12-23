@@ -1,7 +1,7 @@
 {
-  "name": "my-module",
+  "name": "nuxt-contentful",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
+  "description": "Nuxt Module for easy Contentful integration",
   "repository": "your-org/my-module",
   "license": "MIT",
   "type": "module",

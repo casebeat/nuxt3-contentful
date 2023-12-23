@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver, addServerHandler, addDevServerHandler } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addServerHandler} from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
@@ -10,9 +10,8 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
-    const resolver = createResolver(import.meta.url)
-        
+  setup () {
+    
     const { resolve } = createResolver(import.meta.url)
     
     addServerHandler({

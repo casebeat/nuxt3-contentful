@@ -27,7 +27,7 @@ export function mapEntryFieldsToPage<T>(entry: any) {
     const fields: T = {} as T
     
 
-    for (const [key, value] of Object.entries(entry.fields)) {
+    for (const [key] of Object.entries(entry.fields)) {
       // check if entry.fields[key] is an array      
       if (Array.isArray(entry.fields[key])) {
         fields[key] = entry.fields[key].map((item: any) => getArrayItem(item));        
