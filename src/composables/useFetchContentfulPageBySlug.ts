@@ -1,38 +1,36 @@
-import { mapEntryFieldsToPage } from '../functions/mapEntryFieldsToPage'
+import { mapEntryFieldsToPage } from '../functions/mapEntryFieldsToPage';
 
 /**
  * Get entry from contentful by slug
  * @param contentType target ContentType of contentful entry
- * @returns 
+ * @returns
  */
-export async function  useFetchContentfulPageBySlug<T> (contentType: string){    
+export async function useFetchContentfulPageBySlug<T>(contentType: string) {
+  const route = useRoute();
 
-    const route = useRoute();    
-    
-    const routeSlugs = route.params.slugs;    
+  const routeSlugs = route.params.slugs;
 
-    let slug = '';
+  let slug = '';
 
-    if(!routeSlugs){        
-        slug = "index";
-    } else {
-        Array.isArray(routeSlugs) ? slug = routeSlugs.join('/') : slug = routeSlugs.toString();
-        slug = slug.replace(/\/$/, "");    
-    }        
+  if (!routeSlugs) {
+    slug = 'index';
+  } else {
+    Array.isArray(routeSlugs) ? slug = routeSlugs.join('/') : slug = routeSlugs.toString();
+    slug = slug.replace(/\/$/, '');
+  }
 
-    const query = `?slug=${encodeURIComponent(slug)}&contentType=${contentType}`
-        
-    const url = `/api/contentful${query}`;    
+  const query = `?slug=${encodeURIComponent(slug)}&contentType=${contentType}`;
 
-    const { data } = await useFetch(url);
-    
-    const entry =  data.value; 
+  const url = `/api/contentful${query}`;
 
-    if(!data){
-        return null;
-    }
-    const page = mapEntryFieldsToPage<T>(entry);
+  const { data } = await useFetch(url);
 
-    return page;    
-  }  
+  const entry = data.value;
 
+  if (!data) {
+    return null;
+  }
+  const page = mapEntryFieldsToPage<T>(entry);
+
+  return page;
+}

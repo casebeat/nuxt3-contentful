@@ -1,5 +1,5 @@
 export type MenuModel = {
     id: string;
-    title: string;  
-    items: Array<any>;  
+    title: string;
+    items: Array<any>;
 }

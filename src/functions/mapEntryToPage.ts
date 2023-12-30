@@ -5,15 +5,14 @@
 //     let page = {
 //       contentType: entry.sys.contentType.sys.id
 //     } as any;
-      
-  
+
 //     if(entry.fields){
-//       for (const [key, value] of Object.entries(entry.fields)) { 
+//       for (const [key, value] of Object.entries(entry.fields)) {
 //         const entryField = value;
-        
-//         page[key] = value;      
+
+//         page[key] = value;
 //       }
 //     }
-  
+
 //     return page as Page;
 //   }

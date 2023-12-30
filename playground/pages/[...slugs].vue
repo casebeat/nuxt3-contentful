@@ -80,19 +80,19 @@
 </template>
 <script setup lang="ts">
 
-import { type PageModel } from '../models/PageModel'
-import { type MenuModel } from '../models/MenuModel'
+import { type PageModel } from '../models/PageModel';
+import { type MenuModel } from '../models/MenuModel';
 import { useFetchContentfulPageBySlug } from '../../src/composables/useFetchContentfulPageBySlug';
 import { useFetchContentfulEntriesMapped } from '../../src/composables/useFetchContentfulEntriesMapped';
 
 // Get the current page by slug
 //
-const page = await useFetchContentfulPageBySlug<PageModel>("standardPage");
+const page = await useFetchContentfulPageBySlug<PageModel>('standardPage');
 
 // Get the menu
 //
-const menu = await useFetchContentfulEntriesMapped<MenuModel>("menu");
-//const pages = await useFetchContentfulEntriesMapped<PageModel>("standardPage");
-//const menu = {}
+const menu = await useFetchContentfulEntriesMapped<MenuModel>('menu');
+// const pages = await useFetchContentfulEntriesMapped<PageModel>("standardPage");
+// const menu = {}
 
 </script>

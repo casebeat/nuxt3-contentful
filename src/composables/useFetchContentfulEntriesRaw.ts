@@ -1,12 +1,9 @@
+export const useFetchContentfulEntriesRaw = async (contentType: string) => {
+  const query = `?contentType=${contentType}`;
 
-export const useFetchContentfulEntriesRaw = async (contentType: string) => {    
+  const url = `/api/contentful${query}`;
 
-    const query = `?contentType=${contentType}`;
+  const { data } = await useFetch(url);
 
-    const url = `/api/contentful${query}`;    
-
-    const { data } = await useFetch(url);
-
-    return data?.value;    
-  };
-
+  return data?.value;
+};
