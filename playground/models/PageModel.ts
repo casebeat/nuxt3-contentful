@@ -3,6 +3,7 @@ export type PageModel = {
     id: string;
     slug: string;
     teaser: string;
+    title: string;
     body: string;
     maingImage: string
 }

@@ -44,7 +44,8 @@
 
 import { type PageModel } from '../models/PageModel';
 import { type MenuModel } from '../models/MenuModel';
-import { useFetchContentfulPageBySlug } from '../../src/composables/useFetchContentfulPageBySlug';
+import { useFetchContentfulPageBySlug } from '#imports';
+//import { useFetchContentfulPageBySlug } from '../../src/composables/useFetchContentfulPageBySlug';
 import { useFetchContentfulEntriesMapped } from '../../src/composables/useFetchContentfulEntriesMapped';
 
 // Get the current page by slug

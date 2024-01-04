@@ -1,4 +1,4 @@
-import MyModule from '../../../src/module';
+import MyModule from 'nuxt3-contentful/src/module';
 
 export default defineNuxtConfig({
   modules: [

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: ['nuxt3-contentful'],
   nuxtContentful: {},
   runtimeConfig: {
     public: {
