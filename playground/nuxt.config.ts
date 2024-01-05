@@ -1,6 +1,7 @@
+import { defineNuxtConfig } from 'nuxt/config';
+
 export default defineNuxtConfig({
   modules: ['nuxt3-contentful'],
-  nuxtContentful: {},
   runtimeConfig: {
     public: {
       contentful: {
@@ -11,3 +12,9 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
 });
+
+// export default defineNuxtConfig({
+//   modules: ['../src/module'],
+//   nuxtContentful: {},
+//   devtools: { enabled: true },
+// });

@@ -1,5 +1,8 @@
 import renderContent from './renderContent';
 
+type EntryModel = {
+}
+
 function getFieldValue(field: any) {
   if (field?.nodeType === 'document') {
     return renderContent(field);
@@ -7,19 +10,8 @@ function getFieldValue(field: any) {
   return field;
 }
 
-type EntryModel = {
-}
-
-function getArrayItem(arrayItem: any) {
-  if (arrayItem.sys.type === 'Entry') {
-    const fields = mapEntryFieldsToPage<EntryModel>(arrayItem);
-    return fields;
-  }
-  return getFieldValue(arrayItem);
-}
-
-export function mapEntryFieldsToPage<T>(entry: any) {
-  if (!entry) return;
+export function mapEntryFieldsToPage<T>(entry: any) : T {
+  if (!entry) return {} as T;
 
   const fields: T = {} as T;
 
@@ -33,4 +25,12 @@ export function mapEntryFieldsToPage<T>(entry: any) {
   }
 
   return fields;
+}
+
+function getArrayItem(arrayItem: any) {
+  if (arrayItem.sys.type === 'Entry') {
+    const fields = mapEntryFieldsToPage<EntryModel>(arrayItem);
+    return fields;
+  }
+  return getFieldValue(arrayItem);
 }

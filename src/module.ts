@@ -1,5 +1,7 @@
-import { defineNuxtModule, createResolver, addServerHandler, addImports } from '@nuxt/kit';
-import { fileURLToPath } from 'url'
+import {
+  defineNuxtModule, createResolver, addServerHandler, addImports,
+} from '@nuxt/kit';
+import { fileURLToPath } from 'url';
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
 
@@ -12,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {},
   setup() {
     const { resolve } = createResolver(import.meta.url);
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    const runtimeDir = fileURLToPath(new URL('./', import.meta.url));
 
     addServerHandler({
       route: '/api/contentful',
@@ -22,19 +24,23 @@ export default defineNuxtModule<ModuleOptions>({
     addImports([{
       from: resolve(runtimeDir, 'composables/useFetchContentfulEntriesMapped'),
       name: 'useFetchContentfulEntriesMapped',
-      as: 'useFetchContentfulEntriesMapped'
+      as: 'useFetchContentfulEntriesMapped',
     },
     {
       from: resolve(runtimeDir, 'composables/useFetchContentfulPageBySlug'),
       name: 'useFetchContentfulPageBySlug',
-      as: 'useFetchContentfulPageBySlug'
+      as: 'useFetchContentfulPageBySlug',
     },
     {
       from: resolve(runtimeDir, 'composables/useFetchContentfulEntriesRaw'),
       name: 'useFetchContentfulEntriesRaw',
-      as: 'useFetchContentfulEntriesRaw'
-    }
-  ])
-    
+      as: 'useFetchContentfulEntriesRaw',
+    },
+    // {
+    //   name: 'useFetch',
+    //   as: 'useFetch',
+    //   from: resolve('runtime/composables/useFetch'),
+    // }
+    ]);
   },
 });

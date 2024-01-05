@@ -1,8 +1,12 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "module": "es2022",
-    "target": "es2022",
-    "moduleResolution": "Node"
-    }
+  "extends": "./.nuxt/tsconfig.json"
 }
+
+// {
+//   "extends": "./.nuxt/tsconfig.json",
+//   "compilerOptions": {
+//     "module": "es2022",
+//     "target": "es2022",
+//     "moduleResolution": "Node"
+//     }
+// }

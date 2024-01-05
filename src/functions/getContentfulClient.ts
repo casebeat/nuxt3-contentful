@@ -1,6 +1,8 @@
-import contentful, { ContentfulClientApi } from 'contentful';
+// import { type ContentfulClientApi, createClient } from 'contentful';
+import contentful from 'contentful';
+import { useRuntimeConfig } from '#imports';
 
-export function getContentfulClient() : ContentfulClientApi<undefined> {
+export function getContentfulClient() : contentful.ContentfulClientApi<undefined> {
   const options = useRuntimeConfig().public.contentful;
 
   const client = contentful.createClient({

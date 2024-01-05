@@ -1,5 +1,5 @@
+import { useFetch, useRoute } from '#imports';
 import { mapEntryFieldsToPage } from '../functions/mapEntryFieldsToPage';
-import { useFetch } from "nuxt";
 /**
  * Get entry from contentful by slug
  * @param contentType target ContentType of contentful entry

@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
 
   // convert the excludeSlug to an array of strings
   //
-  let excludeSlugs = Array<string>();
+  let excludeSlugs = []; // Array<string>();
   if (excludeSlug && excludeSlug.toString() !== '') {
     if (Array.isArray(excludeSlug)) {
       excludeSlugs = excludeSlug.map((s) => s.toString());
