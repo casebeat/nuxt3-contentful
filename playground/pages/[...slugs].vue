@@ -72,9 +72,9 @@
 </template>
 <script setup lang="ts">
 
+import { useFetchContentfulPageBySlug, useFetchContentfulEntriesMapped } from '#imports';
 import { type PageModel } from '../models/PageModel';
 import { type MenuModel } from '../models/MenuModel';
-import { useFetchContentfulPageBySlug, useFetchContentfulEntriesMapped } from '#imports';
 
 // Get the current page by slug
 //
