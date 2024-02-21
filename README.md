@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use Nuxt Contentful in your Nuxt app ✨
+That's it! You can now use Contentful in your Nuxt app ✨
 
 ## Development
 
@@ -49,6 +49,10 @@ npm install
 
 # Generate type stubs
 npm run dev:prepare
+
+# Add Contentful settings
+CONTENTFUL_SPACE_ID=<YOUR SPACE ID>   
+CONTENTFUL_ACCESS_TOKEN=<YOUR ACCESS TOKEN>
 
 # Develop with the playground
 npm run dev
