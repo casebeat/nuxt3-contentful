@@ -1,6 +1,6 @@
 {
   "name": "nuxt3-contentful",
-  "version": "0.8",
+  "version": "0.0.1",
   "description": "Nuxt Module for easy Contentful integration",
   "repository": "casebeat/nuxt3-contentful",
   "license": "MIT",
